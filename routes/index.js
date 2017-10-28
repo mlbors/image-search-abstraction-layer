@@ -15,6 +15,9 @@
 const express = require('express')
 const router = express.Router()
 
+const imageSearch = require('../services/image-search')
+const historyQuery = require('../db/history')
+
 /************************************************************/
 /************************************************************/
 
@@ -28,6 +31,52 @@ const router = express.Router()
 
 router.get('/', (req, res) => {
   res.send('Hello World!')
+})
+
+/*****/
+/***** IMAGES *****/
+/*****/
+
+router.get('/images', (req, res) => {
+
+  imageSearch.getImages(req, (err, data) => {
+
+    if (err) {
+      res.send({error: 'Error while getting images', err: err, data: data})
+      return
+    } 
+
+    historyQuery.addEntry(data, (err, result) => {
+
+      if (err) {
+        res.send({error: 'Error while insterting data in history', err: err, data: data})
+        return
+      } 
+
+      res.send(data.images)
+      return
+
+    })
+
+  })
+
+})
+
+/*****/
+/***** HISTORY *****/
+/*****/
+
+router.get('/history', (req, res) => {
+	historyQuery.find((err, data) => {
+
+    if (err) {
+      res.send({error: 'Error while getting history', err: err, data: data})
+      return
+    } 
+
+    res.send({data})
+    return
+  })
 })
 
 /************************************************************/

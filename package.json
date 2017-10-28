@@ -15,6 +15,7 @@
   "dependencies": {
     "express": "^4.16.2",
     "mongodb": "^2.2.33",
+    "request": "^2.83.0",
     "serve-favicon": "^2.4.5"
   }
 }
