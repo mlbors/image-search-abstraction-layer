@@ -1,0 +1,1 @@
+Repository for freeCodeCamp - Back End Development Certification - API Projects - Image Search Abstraction Layer

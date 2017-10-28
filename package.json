@@ -1,0 +1,17 @@
+{
+  "name": "image-search-abstraction-layer",
+  "version": "1.0.0",
+  "description": "Repository for freeCodeCamp - Back End Development Certification - API Projects - Image Search Abstraction Layer",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mlbors/image-search-abstraction-layer"
+  },
+  "author": "mlbors",
+  "license": "ISC",
+  "dependencies": {
+  }
+}
