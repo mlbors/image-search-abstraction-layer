@@ -13,5 +13,8 @@
   "author": "mlbors",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.16.2",
+    "mongodb": "^2.2.33",
+    "serve-favicon": "^2.4.5"
   }
 }
