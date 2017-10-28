@@ -53,7 +53,7 @@ router.get('/images', (req, res) => {
         return
       } 
 
-      res.send(data.images)
+      res.send({images: data.images, status: data.status, count: data.count})
       return
 
     })

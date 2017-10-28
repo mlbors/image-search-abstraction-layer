@@ -44,9 +44,13 @@ exports.getImages = (req, callback) => {
   request(query, (err, res, body) => {
     if (err) return callback(err)
 
+    const parsed = JSON.parse(body)
+
     const data = {
       info: query,
-      images: JSON.parse(body).images
+      images: parsed.images,
+      status: parsed.status,
+      count: parsed.count
     }
 
     return callback(null, data)
